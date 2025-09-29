@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int waktu, banyakAsk;
+    cout << "banyak waktu yang ingin diketahui = "; 
+    cin >> banyakAsk;
+    
+    for (int i = 1; i <= banyakAsk; i++) {
+    	cout << "Masukkan waktu: ";
+    	cin >> waktu;
+
+      int x = (waktu-45) % 103; // 103 = 80 (merah) + 20 (hijau) + 3 (kuning)
+      if (x < 0) x += 103; // agar positif
+
+      if (0 <= x && x <= 2) {
+         cout << "Lampu Kuning" << endl;
+       } else if (3 <= x && x <= 82) {
+         cout << "Lampu Merah" << endl;
+       } else {
+         cout << "Lampu Hijau" << endl;
+       }
+ 	  }
+    return 0;
+}
